@@ -4,6 +4,7 @@
   "description": "Dispatch actions in files from the given parameters.",
   "main": "index.js",
   "scripts": {
+    "lint": "standard",
     "test": "tape test.js",
     "cov": "nyc --reporter=lcov npm test",
     "codecov": "npm run cov && codecov"
@@ -31,6 +32,7 @@
   "devDependencies": {
     "codecov": "^1.0.1",
     "nyc": "^8.1.0",
+    "standard": "^8.0.0",
     "tape": "^4.6.0"
   }
 }

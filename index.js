@@ -1,6 +1,5 @@
 'use strict'
 
-const fs = require('fs')
 const path = require('path')
 const callsite = require('callsite')
 const EventEmitter = require('events').EventEmitter
