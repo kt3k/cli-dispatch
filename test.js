@@ -30,3 +30,13 @@ test('it emits the no-action event when the action is not found', t => {
     t.ok(true)
   })
 })
+
+test('it uses the given actions options to look for the action file', t => {
+  t.plan(1)
+
+  logger.log = msg => {
+    t.equal('foo!', msg)
+  }
+
+  dispatch('foo', {}, {actions: 'test/fixture/actions'})
+})
