@@ -1,0 +1,36 @@
+{
+  "name": "cli-dispatch",
+  "version": "0.1.0",
+  "description": "Dispatch actions in files from the given parameters.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js",
+    "cov": "nyc --repoter=lcov npm test",
+    "codecov": "npm run cov && codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kt3k/cli-dispatch.git"
+  },
+  "keywords": [
+    "cli",
+    "minimist",
+    "dispatch",
+    "router",
+    "action"
+  ],
+  "author": "Yoshiya Hinosawa <stibium121@gmail.com> (https://twitter.com/kt3k)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kt3k/cli-dispatch/issues"
+  },
+  "homepage": "https://github.com/kt3k/cli-dispatch#readme",
+  "dependencies": {
+    "callsite": "^1.0.0"
+  },
+  "devDependencies": {
+    "codecov": "^1.0.1",
+    "nyc": "^8.1.0",
+    "tape": "^4.6.0"
+  }
+}
