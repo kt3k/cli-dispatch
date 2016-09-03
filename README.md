@@ -1,5 +1,9 @@
 # cli-dispatch v0.1.0
 
+[![CircleCI](https://circleci.com/gh/kt3k/cli-dispatch.svg?style=svg)](https://circleci.com/gh/kt3k/cli-dispatch)
+[![codecov](https://codecov.io/gh/kt3k/cli-dispatch/branch/master/graph/badge.svg)](https://codecov.io/gh/kt3k/cli-dispatch)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+
 > Dispatch actions in files from the given parameters.
 
 # Install
