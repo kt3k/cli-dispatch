@@ -22,7 +22,7 @@ const callersDir = () => path.dirname(callsite()[2].getFileName())
  */
 function main (action, argv, options) {
   options = options || {}
-  const cli = new CliDispatch(action, options.actions || 'actions',  options.base || callersDir())
+  const cli = new CliDispatch(action, options.actions || 'actions', options.base || callersDir())
 
   setImmediate(() => cli.dispatch(argv))
 
