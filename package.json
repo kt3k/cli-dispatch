@@ -1,6 +1,6 @@
 {
   "name": "cli-dispatch",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Dispatch actions in files from the given parameters.",
   "main": "index.js",
   "scripts": {
