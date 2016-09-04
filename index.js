@@ -16,12 +16,12 @@ const callersDir = () => path.dirname(callsite()[2].getFileName())
  * @param {string} action The action name
  * @param {object} argv The parameters for the actions
  * @param {string} [options.actions] The action's directory (relative path)
+ * @param {string} [options.base] The action's base directory (absolute path)
  * @return {CliDispatch}
  */
 function main (action, argv, options) {
   options = options || {}
-  const actionDir = path.join(callersDir(), options.actions || 'actions')
-  const cli = new CliDispatch(action, actionDir)
+  const cli = new CliDispatch(action, options.actions || 'actions',  options.base || callersDir())
 
   setImmediate(() => cli.dispatch(argv))
 
@@ -31,11 +31,13 @@ function main (action, argv, options) {
 /**
  * CliDispatch internal class.
  * @param {string} action The action name
- * @param {string} dir The directory name (absolute path)
+ * @param {string} dir The directory name (relative path)
+ * @param {string} baseDir The base directory name (absolute path)
  */
-function CliDispatch (action, dir) {
+function CliDispatch (action, dir, baseDir) {
   this.action = action
   this.dir = dir
+  this.baseDir = baseDir
 }
 
 const prototype = CliDispatch.prototype = new EventEmitter()
@@ -48,7 +50,7 @@ prototype.dispatch = function (argv) {
   let action = null
 
   try {
-    action = require(path.join(this.dir, this.action))
+    action = require(path.join(this.baseDir, this.dir, this.action))
   } catch (e) {
     this.emit('no-action', this.action)
     return
