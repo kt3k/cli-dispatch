@@ -1,5 +1,6 @@
 'use strict'
 
+const util = require('util')
 const path = require('path')
 const callsite = require('callsite')
 const EventEmitter = require('events').EventEmitter
@@ -40,13 +41,13 @@ function CliDispatch (action, dir, baseDir) {
   this.baseDir = baseDir
 }
 
-const prototype = CliDispatch.prototype = new EventEmitter()
+util.inherits(CliDispatch, EventEmitter)
 
 /**
  * Dispatches the action with the given arguments.
  * @param {object} argv The arguments for the action
  */
-prototype.dispatch = function (argv) {
+CliDispatch.prototype.dispatch = function (argv) {
   let action = null
 
   try {
