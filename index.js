@@ -50,7 +50,7 @@ prototype.dispatch = function (argv) {
   try {
     action = require(path.join(this.dir, this.action))
   } catch (e) {
-    this.emit('no-action')
+    this.emit('no-action', this.action)
     return
   }
 

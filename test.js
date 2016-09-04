@@ -26,8 +26,8 @@ test('it passes the argv to the action', t => {
 test('it emits the no-action event when the action is not found', t => {
   t.plan(1)
 
-  fixtureDispatch('baz', {}).on('no-action', () => {
-    t.ok(true)
+  fixtureDispatch('baz', {}).on('no-action', name => {
+    t.equal(name, 'baz')
   })
 })
 
