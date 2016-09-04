@@ -1,4 +1,4 @@
-# cli-dispatch v1.1.1
+# cli-dispatch v1.2.0
 
 [![CircleCI](https://circleci.com/gh/kt3k/cli-dispatch.svg?style=svg)](https://circleci.com/gh/kt3k/cli-dispatch)
 [![codecov](https://codecov.io/gh/kt3k/cli-dispatch/branch/master/graph/badge.svg)](https://codecov.io/gh/kt3k/cli-dispatch)
