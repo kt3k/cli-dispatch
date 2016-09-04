@@ -64,6 +64,8 @@ Then, main.js works as the following:
     foo!
     $ node main.js bar --name John
     Hello, John!
+    $ node main.js baz
+    No such action: baz
 
 # API
 
