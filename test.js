@@ -1,4 +1,5 @@
 const dispatch = require('./')
+const lookup = dispatch.lookup
 const fixtureDispatch = require('./test/fixture/dispatch')
 const logger = require('./test/fixture/logger')
 const test = require('tape')
@@ -39,4 +40,18 @@ test('it uses the given actions options to look for the action file', t => {
   }
 
   dispatch('foo', {}, {actions: 'test/fixture/actions'})
+})
+
+test('lookup method looks up the given action', t => {
+  t.plan(2)
+
+  logger.log = msg => {
+    t.equal('foo!', msg)
+  }
+
+  const action = lookup('foo', {actions: 'test/fixture/actions'})
+
+  t.ok(typeof action === 'function', 'The returned value is a function.')
+
+  action()
 })

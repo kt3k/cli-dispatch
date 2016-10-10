@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/kt3k/cli-dispatch/branch/master/graph/badge.svg)](https://codecov.io/gh/kt3k/cli-dispatch)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-> Dispatch actions in files from the given parameters.
+> Dispatches or looks up actions in a direactory from the given parameters.
 
 # Install
 
@@ -84,6 +84,14 @@ const dispatch = require('cli-dispatch')
 This dispatches the action by the given action name and returns the custom CliDispatch class instance. If the action file is not found, then the instance emits the `no-action` event.
 
 `argv` is passed to the action function. 
+
+## lookup(action, options)
+
+- @param {string} action The name of the action
+- @param {object} options The options
+- @param {string} [options.actions] The directory where this function look for the actions. Default is `[the caller's directory]/actions`. For example, if your main.js is in `/foo/bar` and you call dispatch in main.js, then it look for the actions under `/foo/bar/actions`
+
+This looks up the action function by the given action name and returns that function.
 
 # License
 
